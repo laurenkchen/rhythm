@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.nlaha.godotmidi"
+type="MidiResource"
+uid="uid://bel7opeef6k1m"
+path="res://.godot/imported/wii.mid-908cb71f207af204f0ff90833aae5c19.res"
+
+[deps]
+
+source_file="res://songs/wii.mid"
+dest_files=["res://.godot/imported/wii.mid-908cb71f207af204f0ff90833aae5c19.res"]
+
+[params]
+

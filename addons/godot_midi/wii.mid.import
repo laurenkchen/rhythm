@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.nlaha.godotmidi"
+type="MidiResource"
+uid="uid://bopr6ldx5hyvt"
+path="res://.godot/imported/wii.mid-fdc8251f26fcb68e8944bcd119f19d71.res"
+
+[deps]
+
+source_file="res://addons/godot_midi/wii.mid"
+dest_files=["res://.godot/imported/wii.mid-fdc8251f26fcb68e8944bcd119f19d71.res"]
+
+[params]
+
