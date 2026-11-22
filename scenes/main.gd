@@ -13,6 +13,8 @@ const PERFECT_PX = 20.0
 var note_scene := preload("res://scenes/note.tscn")
 var score :=0
 var combo := 0
+var lane_flash := [0.0,0.0,0.0,0.0]
+
 
 @onready var midi = $MidiPlayer
 @onready var music = $MidiPlayer/AudioStreamPlayer
@@ -77,9 +79,25 @@ func register(result):
 	judge_label.text = result
 	score_label.text = "Score: %d" % score
 	combo_label.text = "Combo: %d" % combo if combo >1 else ""
-func _process(_delta):
+func _process(delta):
+	var idle_color = Color.WHITE
+	var flash_color =  Color(0.2,0.95,1.0,1.0)
 	for lane in 4:
 		var zone = hit_zones.get_child(lane)
-		for child in zone.get_children():
-			if child is ColorRect:
-				child.modulate = Color.YELLOW if Input.is_action_pressed("lane_%d" % lane) else Color(1,1,1)
+		if Input.is_action_pressed("lane_%d" % lane):
+			lane_flash[lane] = 1.0
+			for area in zone.get_overlapping_areas():
+				if not area.is_queued_for_deletion() and abs(area.global_position.y - HIT_Y) <= PERFECT_PX:
+					try_hit(lane)
+					break
+					
+		else:
+			lane_flash[lane] = max(0.0, lane_flash[lane] - delta * 7.0) 
+		var t = lane_flash[lane]
+		
+		zone.scale = Vector2.ONE.lerp(Vector2(1.2,1.2), t)
+		var pad = zone.get_node("ColorRect")
+		pad.color = idle_color.lerp(flash_color, t)
+		if zone.has_node("Beam"):
+			var beam = zone.get_node("Beam")
+			beam.color = Color(0.2, 0.95, 1.0, 0.28 * t)

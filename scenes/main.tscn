@@ -17,18 +17,38 @@ position = Vector2(426, 560)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitzones/hitzone_0"]
 shape = SubResource("RectangleShape2D_o5qli")
 
+[node name="Beam" type="ColorRect" parent="hitzones/hitzone_0"]
+z_index = 10
+offset_left = -40.0
+offset_top = -94.0
+offset_right = 44.0
+offset_bottom = -15.0
+color = Color(1, 1, 1, 0)
+
 [node name="ColorRect" type="ColorRect" parent="hitzones/hitzone_0"]
-offset_left = -10.0
-offset_top = -1.0
-offset_right = 9.0
+z_index = 10
+offset_left = -40.0
+offset_top = -15.0
+offset_right = 44.0
+offset_bottom = 17.0
 
 [node name="hitzone_1" type="Area2D" parent="hitzones"]
 position = Vector2(526, 560)
 
+[node name="Beam" type="ColorRect" parent="hitzones/hitzone_1"]
+z_index = 10
+offset_left = -41.0
+offset_top = -94.0
+offset_right = 43.0
+offset_bottom = -15.0
+color = Color(1, 1, 1, 0)
+
 [node name="ColorRect" type="ColorRect" parent="hitzones/hitzone_1"]
-offset_left = -9.0
-offset_right = 10.0
-offset_bottom = 1.0
+z_index = 10
+offset_left = -41.0
+offset_top = -15.0
+offset_right = 43.0
+offset_bottom = 17.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitzones/hitzone_1"]
 shape = SubResource("RectangleShape2D_o5qli")
@@ -37,9 +57,19 @@ shape = SubResource("RectangleShape2D_o5qli")
 position = Vector2(626, 560)
 
 [node name="ColorRect" type="ColorRect" parent="hitzones/hitzone_2"]
-offset_left = -9.0
-offset_top = -1.0
-offset_right = 10.0
+z_index = 10
+offset_left = -41.0
+offset_top = -15.0
+offset_right = 43.0
+offset_bottom = 17.0
+
+[node name="Beam" type="ColorRect" parent="hitzones/hitzone_2"]
+z_index = 10
+offset_left = -41.0
+offset_top = -94.0
+offset_right = 43.0
+offset_bottom = -15.0
+color = Color(1, 1, 1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitzones/hitzone_2"]
 shape = SubResource("RectangleShape2D_o5qli")
@@ -47,10 +77,20 @@ shape = SubResource("RectangleShape2D_o5qli")
 [node name="hitzone_3" type="Area2D" parent="hitzones"]
 position = Vector2(726, 560)
 
+[node name="Beam" type="ColorRect" parent="hitzones/hitzone_3"]
+z_index = 10
+offset_left = -41.0
+offset_top = -94.0
+offset_right = 43.0
+offset_bottom = -15.0
+color = Color(1, 1, 1, 0)
+
 [node name="ColorRect" type="ColorRect" parent="hitzones/hitzone_3"]
-offset_left = -9.0
-offset_top = -1.0
-offset_right = 10.0
+z_index = 10
+offset_left = -41.0
+offset_top = -15.0
+offset_right = 43.0
+offset_bottom = 17.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitzones/hitzone_3"]
 shape = SubResource("RectangleShape2D_o5qli")
@@ -65,24 +105,33 @@ stream = ExtResource("1_o5qli")
 [node name="ui" type="CanvasLayer" parent="."]
 
 [node name="Judge" type="Label" parent="ui"]
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = -1
+anchor_right = 0.14322917
+anchor_bottom = 0.0787037
+offset_left = 880.0
+offset_top = 307.0
+offset_right = 920.0
+offset_bottom = 330.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Combo" type="Label" parent="ui"]
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = -1
+anchor_right = 0.20659722
+anchor_bottom = 0.12345679
+offset_left = 199.0
+offset_top = 181.0
+offset_right = 239.0
+offset_bottom = 204.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Score" type="Label" parent="ui"]
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = -1
+anchor_right = 0.18663195
+anchor_bottom = 0.1095679
+offset_left = 15.0
+offset_top = 14.0
+offset_right = 55.0
+offset_bottom = 37.0
 metadata/_edit_use_anchors_ = true
 
 [node name="notes" type="Node2D" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 388.0
-offset_top = 559.0
-offset_right = 765.0
-offset_bottom = 560.0
