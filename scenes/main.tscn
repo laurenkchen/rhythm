@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqg0tm0olvj6g"]
+
+[ext_resource type="Script" uid="uid://f5ftrcmb56k5" path="res://scenes/main.gd" id="1_0wfyh"]
+[ext_resource type="AudioStream" uid="uid://vms1vwntmokv" path="res://songs/wii.ogg" id="1_o5qli"]
+[ext_resource type="MidiResource" uid="uid://bel7opeef6k1m" path="res://songs/wii.mid" id="2_sugp2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qli"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_0wfyh")
+
+[node name="hitzones" type="Node2D" parent="."]
+
+[node name="hitzone_0" type="Area2D" parent="hitzones"]
+position = Vector2(426, 560)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitzones/hitzone_0"]
+shape = SubResource("RectangleShape2D_o5qli")
+
+[node name="ColorRect" type="ColorRect" parent="hitzones/hitzone_0"]
+offset_left = -10.0
+offset_top = -1.0
+offset_right = 9.0
+
+[node name="hitzone_1" type="Area2D" parent="hitzones"]
+position = Vector2(526, 560)
+
+[node name="ColorRect" type="ColorRect" parent="hitzones/hitzone_1"]
+offset_left = -9.0
+offset_right = 10.0
+offset_bottom = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitzones/hitzone_1"]
+shape = SubResource("RectangleShape2D_o5qli")
+
+[node name="hitzone_2" type="Area2D" parent="hitzones"]
+position = Vector2(626, 560)
+
+[node name="ColorRect" type="ColorRect" parent="hitzones/hitzone_2"]
+offset_left = -9.0
+offset_top = -1.0
+offset_right = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitzones/hitzone_2"]
+shape = SubResource("RectangleShape2D_o5qli")
+
+[node name="hitzone_3" type="Area2D" parent="hitzones"]
+position = Vector2(726, 560)
+
+[node name="ColorRect" type="ColorRect" parent="hitzones/hitzone_3"]
+offset_left = -9.0
+offset_top = -1.0
+offset_right = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitzones/hitzone_3"]
+shape = SubResource("RectangleShape2D_o5qli")
+
+[node name="MidiPlayer" type="MidiPlayer" parent="."]
+midi = ExtResource("2_sugp2")
+process_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MidiPlayer"]
+stream = ExtResource("1_o5qli")
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="Judge" type="Label" parent="ui"]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Combo" type="Label" parent="ui"]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="Label" parent="ui"]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="notes" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 388.0
+offset_top = 559.0
+offset_right = 765.0
+offset_bottom = 560.0
