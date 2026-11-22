@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.nlaha.godotmidi"
+type="MidiResource"
+uid="uid://c8eemlls2bwky"
+path="res://.godot/imported/willsmith.mid-5219501eb6253b06bf9bd252ac78b35f.res"
+
+[deps]
+
+source_file="res://songs/willsmith.mid"
+dest_files=["res://.godot/imported/willsmith.mid-5219501eb6253b06bf9bd252ac78b35f.res"]
+
+[params]
+

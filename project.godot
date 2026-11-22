@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Pigeon"
-run/main_scene="uid://dqg0tm0olvj6g"
+run/main_scene="uid://8egfvwxesh5"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameData="*res://GameData.gd"
 
 [editor_plugins]
 

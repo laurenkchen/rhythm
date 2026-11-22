@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.nlaha.godotmidi"
+type="MidiResource"
+uid="uid://dpykslvr6powk"
+path="res://.godot/imported/acnl.mid-3eb750ce62cf68071a4b9d4674729632.res"
+
+[deps]
+
+source_file="res://songs/acnl.mid"
+dest_files=["res://.godot/imported/acnl.mid-3eb750ce62cf68071a4b9d4674729632.res"]
+
+[params]
+
