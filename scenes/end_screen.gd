@@ -13,7 +13,7 @@ func _ready():
 	stats_label.text = (
 		"Score: %d\n" % GameData.final_score + 
 		"Accuracy %.1f%%\n" % GameData.accuracy + 
-		"Max Combo: %d\n\n" % GameData.max_combo + 
+		"Max Combo: %d\n" % GameData.max_combo + 
 		"Perfect :%d | Good: %d | Miss: %d" % [
 			GameData.perfect_count,
 			GameData.good_count,

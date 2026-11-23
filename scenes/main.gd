@@ -130,12 +130,12 @@ func register(result):
 			
 		"Miss":
 			combo = 0
+			miss_count += 1
 			judge_label.modulate = Color(1.0, 0.25, 0.3)
 	max_combo = max(max_combo, combo)
 	judge_label.text = result
 	score_label.text = "Score: %d" % score
 	combo_label.text = "Combo: %d" % combo if combo >1 else ""
-	
 	judge_label.pivot_offset = judge_label.size / 4
 	judge_label.scale = Vector2(1.3,1.3)
 	create_tween().tween_property(judge_label, "scale", Vector2.ONE, 0.12)
@@ -185,6 +185,11 @@ func _finish_song():
 	
 	midi.stop()
 	music.stop()
+	
+	for note in notes.get_children():
+		if not note.is_queued_for_deletion() and note.monitoring:
+			miss_count += 1
+			note.queue_free()
 	
 	
 	var total_notes = perfect_count + good_count + miss_count
