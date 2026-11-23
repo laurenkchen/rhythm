@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://c718w2mbdh7mf"]
+
+[ext_resource type="Script" uid="uid://bceqeg40634br" path="res://scenes/end_screen.gd" id="1_kq7ac"]
+
+[node name="EndScreen" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kq7ac")
+
+[node name="TitleLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 37.0
+offset_right = 371.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+
+[node name="GradeLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 113.0
+offset_right = 375.0
+offset_bottom = 161.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+
+[node name="StatsLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 181.0
+offset_right = 385.0
+offset_bottom = 229.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+
+[node name="PlayAgainButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 266.0
+offset_right = 482.0
+offset_bottom = 274.0
+theme_override_colors/font_outline_color = Color(0.7476796, 0.7476796, 0.7476796, 1)
+theme_override_font_sizes/font_size = 40
+
+[node name="MenuButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 376.0
+offset_right = 523.0
+offset_bottom = 384.0
+theme_override_font_sizes/font_size = 40

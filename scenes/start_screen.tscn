@@ -6,28 +6,49 @@
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_tx5wa")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="TitleLabel" type="Label" parent="Control"]
 layout_mode = 0
-offset_right = 208.0
-offset_bottom = 128.0
+offset_left = 474.0
+offset_top = 80.0
+offset_right = 1276.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 64
+text = "Rhythm Game!"
+horizontal_alignment = 1
 
-[node name="TitleLabel" type="Label" parent="Control/VBoxContainer"]
-layout_mode = 2
-
-[node name="Song1Button" type="Button" parent="Control/VBoxContainer"]
-layout_mode = 2
+[node name="Song1Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 342.0
+offset_right = 1002.0
+offset_bottom = 428.0
+theme_override_font_sizes/font_size = 64
 text = "Animal Crossing: 10:00AM"
 
-[node name="Song2Button" type="Button" parent="Control/VBoxContainer"]
-layout_mode = 2
-text = "Just the Two of Us"
+[node name="Song2Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 432.0
+offset_right = 1002.0
+offset_bottom = 518.0
+theme_override_font_sizes/font_size = 64
+text = "Zelda's Lullaby
+"
 
-[node name="Song3Button" type="Button" parent="Control/VBoxContainer"]
-layout_mode = 2
+[node name="Song3Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 522.0
+offset_right = 1002.0
+offset_bottom = 608.0
+theme_override_font_sizes/font_size = 64
 text = "Wii Theme
 "

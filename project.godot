@@ -19,9 +19,17 @@ config/icon="res://icon.svg"
 
 GameData="*res://GameData.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_midi/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
+
+[gui]
+
+theme/custom_font="uid://dj63tpdp0b3pn"
 
 [input]
 
@@ -49,3 +57,4 @@ lane_3={
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

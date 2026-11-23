@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.nlaha.godotmidi"
+type="MidiResource"
+uid="uid://cg3lw2k8nu7yn"
+path="res://.godot/imported/Queen.mid-43fa1e40aaa12dd6f2eecf1d20be2231.res"
+
+[deps]
+
+source_file="res://songs/Queen.mid"
+dest_files=["res://.godot/imported/Queen.mid-43fa1e40aaa12dd6f2eecf1d20be2231.res"]
+
+[params]
+

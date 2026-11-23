@@ -1,0 +1,14 @@
+[remap]
+
+importer="com.nlaha.godotmidi"
+type="MidiResource"
+uid="uid://cqoocnvk62npq"
+path="res://.godot/imported/Zelda.mid-38bc45f6e65d493ff0fe11ecc3390d76.res"
+
+[deps]
+
+source_file="res://songs/Zelda.mid"
+dest_files=["res://.godot/imported/Zelda.mid-38bc45f6e65d493ff0fe11ecc3390d76.res"]
+
+[params]
+

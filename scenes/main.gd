@@ -10,6 +10,10 @@ const HIT_Y = 560.0
 const FALL_TIME = 2.0
 const PERFECT_PX = 20.0
 const MAX_HOLD_TIME = 1.0
+const SONG_DURATION = 60.0
+const FADEOUT_TIME = 3.0
+
+var stop_spawning := false
 var hold_time := [0.0,0.0,0.0,0.0]
 
 var note_scene := preload("res://scenes/note.tscn")
@@ -38,19 +42,36 @@ func _ready():
 	midi.note_offset = FALL_TIME
 	midi.midi = load(GameData.midi_path)
 	music.stream = load(GameData.audio_path)	
+	music.volume_db = 0.0
 	
 	midi.note.connect(_on_midi_note)
 	midi.finished.connect(_on_midi_finished)
 	midi.play()
+	_run_song_timer()
 	
 	await get_tree().create_timer(FALL_TIME + GameData.sync_offset).timeout
-	music.play()
+	if not song_ended:
+		music.play()
+func _run_song_timer():
+	var spawn_cutoff = max(0.0, SONG_DURATION - FADEOUT_TIME - FALL_TIME)
+	await get_tree().create_timer(spawn_cutoff).timeout
+	stop_spawning = true
+	
+	await get_tree().create_timer(FALL_TIME).timeout
+	if not song_ended: 
+		var fade_tween = create_tween()
+		fade_tween.tween_property(music, "volume_db", -80.0, FADEOUT_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	await get_tree().create_timer(FADEOUT_TIME).timeout
+	_finish_song()
+	
 func _on_midi_note(event, _track): 
-	if event["subtype"] != MIDI_MESSAGE_NOTE_ON:
+	if stop_spawning or event["subtype"] != MIDI_MESSAGE_NOTE_ON:
 		return
 	var span = HIGHEST_NOTE - LOWEST_NOTE + 1
 	var lane = clampi(int((event["note"] - LOWEST_NOTE) * 4.0/span), 0,3)
 	spawn_note.call_deferred(lane)
+
+
 func spawn_note(lane):
 	var n = note_scene.instantiate()
 	n.lane = lane
@@ -99,10 +120,12 @@ func register(result):
 		"Perfect":
 			score +=300
 			combo +=1
+			perfect_count += 1
 			judge_label.modulate = Color(0.2, 0.95, 1.0)
 		"Good":
 			score +=100
 			combo +=1
+			good_count += 1 
 			judge_label.modulate = Color(0.4, 1.0, 0.5)
 			
 		"Miss":
@@ -149,13 +172,26 @@ func _process(delta):
 func _on_midi_finished():
 	if song_ended: 
 		return
-	song_ended = true
 	
 	while notes.get_child_count() > 0:
 		await get_tree().process_frame
 	await get_tree().create_timer(0.5).timeout
+	_finish_song()
+	
+func _finish_song():
+	if song_ended:
+		return
+	song_ended = true
+	
+	midi.stop()
+	music.stop()
+	
 	
 	var total_notes = perfect_count + good_count + miss_count
-	var accuracy := 100.0
-	if total_notes > 0:
-		accuracy = ((perfect_count * 1.0 + good_count *0.5) / total_notes * 100.0)
+	GameData.final_score = score
+	GameData.max_combo = max_combo
+	GameData.perfect_count = perfect_count
+	GameData.good_count = good_count
+	GameData.miss_count = miss_count
+	GameData.accuracy = ((perfect_count * 1.0 + good_count *0.5) / total_notes) * 100
+	get_tree().change_scene_to_file("res://scenes/end_screen.tscn")

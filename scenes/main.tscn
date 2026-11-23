@@ -106,12 +106,14 @@ stream = ExtResource("1_o5qli")
 
 [node name="Judge" type="Label" parent="ui"]
 anchors_preset = -1
+anchor_left = -0.14930555
 anchor_right = 0.14322917
-anchor_bottom = 0.0787037
-offset_left = 880.0
-offset_top = 307.0
-offset_right = 920.0
-offset_bottom = 330.0
+anchor_bottom = 0.20524691
+offset_left = 375.0
+offset_top = 255.0
+offset_right = 415.0
+offset_bottom = 278.0
+theme_override_font_sizes/font_size = 32
 metadata/_edit_use_anchors_ = true
 
 [node name="Combo" type="Label" parent="ui"]
@@ -122,6 +124,7 @@ offset_left = 199.0
 offset_top = 181.0
 offset_right = 239.0
 offset_bottom = 204.0
+theme_override_font_sizes/font_size = 32
 metadata/_edit_use_anchors_ = true
 
 [node name="Score" type="Label" parent="ui"]
@@ -132,6 +135,7 @@ offset_left = 15.0
 offset_top = 14.0
 offset_right = 55.0
 offset_bottom = 37.0
+theme_override_font_sizes/font_size = 32
 metadata/_edit_use_anchors_ = true
 
 [node name="notes" type="Node2D" parent="."]
