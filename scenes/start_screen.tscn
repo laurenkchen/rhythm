@@ -1,6 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://8egfvwxesh5"]
+[gd_scene load_steps=18 format=3 uid="uid://8egfvwxesh5"]
 
 [ext_resource type="Script" uid="uid://sxo4tdnkka8g" path="res://scenes/control.gd" id="1_tx5wa"]
+[ext_resource type="Texture2D" uid="uid://btuyaeyju0no5" path="res://addons/assets/frames/frame_00.png" id="2_bdg0b"]
+[ext_resource type="Texture2D" uid="uid://bgxp6us27jugb" path="res://addons/assets/frames/frame_01.png" id="3_xfy2r"]
+[ext_resource type="Texture2D" uid="uid://dwa5uh4k7oaoy" path="res://addons/assets/frames/frame_02.png" id="4_lt4el"]
+[ext_resource type="Texture2D" uid="uid://uc3xxunxfrdx" path="res://addons/assets/frames/frame_03.png" id="5_phykr"]
+[ext_resource type="Texture2D" uid="uid://y33orux4mtro" path="res://addons/assets/frames/frame_04.png" id="6_q3i3u"]
+[ext_resource type="Texture2D" uid="uid://3aotddnlojnc" path="res://addons/assets/frames/frame_05.png" id="7_2banv"]
+[ext_resource type="Texture2D" uid="uid://dhrrkpcisgos7" path="res://addons/assets/frames/frame_06.png" id="8_ytx0m"]
+[ext_resource type="Texture2D" uid="uid://ukuldkl5pid" path="res://addons/assets/frames/frame_07.png" id="9_a4px2"]
+[ext_resource type="Texture2D" uid="uid://cijeg108l3i5t" path="res://addons/assets/frames/frame_08.png" id="10_37qom"]
+[ext_resource type="Texture2D" uid="uid://cj6tbu5j5l20f" path="res://addons/assets/frames/frame_09.png" id="11_a7uje"]
+[ext_resource type="Texture2D" uid="uid://dwboch1uev7e2" path="res://addons/assets/frames/frame_10.png" id="12_8c457"]
+[ext_resource type="Texture2D" uid="uid://q1y22qpjk376" path="res://addons/assets/frames/frame_11.png" id="13_3opy0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tx5wa"]
 bg_color = Color(0.24305055, 0.24301529, 0.27843666, 1)
@@ -38,6 +50,50 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_tx5wa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bdg0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xfy2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lt4el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_phykr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q3i3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2banv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ytx0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a4px2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_37qom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_a7uje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8c457")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3opy0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
 [node name="StartScreen" type="Node2D"]
 
 [node name="Control" type="Control" parent="."]
@@ -52,9 +108,9 @@ script = ExtResource("1_tx5wa")
 [node name="TitleLabel" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 165.0
-offset_top = 34.0
+offset_top = 44.0
 offset_right = 967.0
-offset_bottom = 112.0
+offset_bottom = 122.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 64
 text = "Rhythm Game!"
@@ -62,10 +118,10 @@ horizontal_alignment = 1
 
 [node name="Song1Button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 425.0
-offset_top = 230.0
-offset_right = 1100.0
-offset_bottom = 314.0
+offset_left = 427.0
+offset_top = 192.0
+offset_right = 1102.0
+offset_bottom = 276.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_tx5wa")
@@ -75,37 +131,37 @@ text = "Animal Crossing: 10:00AM"
 
 [node name="Song2Button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 428.0
-offset_top = 346.0
-offset_right = 1099.0
-offset_bottom = 423.0
+offset_left = 430.0
+offset_top = 308.0
+offset_right = 1101.0
+offset_bottom = 385.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_tx5wa")
 theme_override_styles/hover = SubResource("StyleBoxFlat_o7i0r")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_he1sj")
-text = "▶ Zelda's Lullaby"
+text = "Zelda's Lullaby"
 
 [node name="Song3Button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 425.0
-offset_top = 454.0
-offset_right = 1100.0
-offset_bottom = 528.0
+offset_left = 427.0
+offset_top = 416.0
+offset_right = 1102.0
+offset_bottom = 490.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_tx5wa")
 theme_override_styles/hover = SubResource("StyleBoxFlat_o7i0r")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_he1sj")
-text = "▶ Wii Theme "
+text = "Wii Theme "
 
 [node name="songselect" type="Label" parent="Control"]
 z_index = 3
 layout_mode = 0
-offset_left = 363.0
-offset_top = 165.0
-offset_right = 1165.0
-offset_bottom = 243.0
+offset_left = 369.0
+offset_top = 119.0
+offset_right = 1171.0
+offset_bottom = 197.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 44
 text = "Song select:"
@@ -137,3 +193,19 @@ offset_right = 372.0
 offset_bottom = 637.0
 theme_override_font_sizes/font_size = 40
 text = "˚ · • . ° • . ✦ . • ° . • · ˚"
+
+[node name="Label4" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 566.0
+offset_top = 513.0
+offset_right = 955.0
+offset_bottom = 549.0
+theme_override_font_sizes/font_size = 30
+text = "Use the 1234 keys to play!"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(228.5, 355.00003)
+scale = Vector2(0.8125, 0.8125)
+sprite_frames = SubResource("SpriteFrames_tx5wa")
+autoplay = "default"
+frame_progress = 0.5237189
